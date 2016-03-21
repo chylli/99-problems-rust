@@ -1,3 +1,5 @@
+https://travis-ci.org/chylli/99-problems-rust.svg?branch=master
+
 99 Problems in Rust
 ===================
 
