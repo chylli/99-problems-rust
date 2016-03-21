@@ -1,0 +1,13 @@
+[package]
+name = "p99"
+version = "0.0.1"
+authors = ["Chylli <chylli.email@gmail.com>"]
+description = "99 Problems in Rust"
+repository = "https://github.com/99-problems-rust"
+keywords = ["rust", "99 problems"]
+license = "MIT"
+[lib]
+name = "p99"
+test = true
+
+[dependencies]
