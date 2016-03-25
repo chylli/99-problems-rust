@@ -2,6 +2,7 @@
 ///** example
 ///``` * (my-last '(a b c d))
 ///(D)```
+use p1::List::*;
 
 enum List {
     Cons(u32, Box<List>),
@@ -10,26 +11,26 @@ enum List {
 
 impl List {
     fn new()->List {
-        List::Nil
+        Nil
     }
 
     fn prepend(self, elem: u32) -> List {
-        List::Cons(elem, Box::new(self))
+        Cons(elem, Box::new(self))
     }
 
     fn my_last(&self) -> List{
         match *self {
-            List::Cons(head, ref tail) => {
+            Cons(head, ref tail) => {
                 let tail_last = tail.my_last();
                 match tail_last {
-                    List::Nil => {
-                        List::Cons(head, Box::new(List::Nil))
+                    Nil => {
+                        Cons(head, Box::new(Nil))
                     }
                     _ => {tail_last}
                 }
             }
-            List::Nil => {
-                List::Nil
+            Nil => {
+                Nil
             }
         }
     }
@@ -43,13 +44,13 @@ fn my_last_test(){
     list = list.prepend(3);
     let last = list.my_last();
     match last {
-        List::Nil => {
+        Nil => {
             assert!(false);
         }
-        List::Cons(head, tail) => {
+        Cons(head, tail) => {
             assert!(head == 1);
             match *tail {
-                List::Nil => {
+                Nil => {
                     assert!(true);
                 }
                 _ => {
