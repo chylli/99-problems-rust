@@ -20,6 +20,7 @@ impl List {
 
     fn my_last(&self) -> List{
         match *self {
+            // what's the meaning of ref here?
             Cons(head, ref tail) => {
                 let tail_last = tail.my_last();
                 match tail_last {
