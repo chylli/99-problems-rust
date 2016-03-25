@@ -48,6 +48,7 @@ fn my_last_test(){
         Nil => {
             assert!(false);
         }
+        // why cannot use ref here?
         Cons(head, tail) => {
             assert!(head == 1);
             match *tail {
