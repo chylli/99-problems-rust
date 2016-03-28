@@ -2,7 +2,7 @@
 ///** example
 ///``` * (my-last '(a b c d))
 ///(D)```
-use p1::List::*;
+use self::List::*;
 
 enum List {
     Cons(u32, Box<List>),
