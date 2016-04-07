@@ -15,11 +15,11 @@ pub fn pack(list: &[char]) ->Vec<Vec<char>> {
         }
         else {
             last = *c;
-            result.push(sub_result.clone());
+            result.push(sub_result);
             sub_result = vec![last];
         }
     }
-    result.push(sub_result.clone());
+    result.push(sub_result);
     result
 }
  
