@@ -1,4 +1,4 @@
-//!Find the k'th element of a list. (easy)
+//! Find the k'th element of a list. (easy)
 ///# example
 ///```
 ///use p99::p3::at;
@@ -7,9 +7,8 @@
 ///```
 pub fn at(k: usize, list: &[char]) -> Option<char> {
     if list.len() >= k {
-        Some(list[k-1])
-    }
-    else{
+        Some(list[k - 1])
+    } else {
         None
     }
 }

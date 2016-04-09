@@ -1,6 +1,6 @@
-//!Find out whether a list is a palindrome. (easy)
+//! Find out whether a list is a palindrome. (easy)
 //!
-//!HINT: a palindrome is its own reverse.
+//! HINT: a palindrome is its own reverse.
 ///# example
 ///```
 /// use p99::p6::is_palindrome;
