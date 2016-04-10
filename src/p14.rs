@@ -21,8 +21,7 @@ pub fn duplicate(list: &[char]) -> Vec<char> {
 }
 
 pub fn duplicate2(list: &[char]) -> Vec<char> {
-    let result: Vec<Vec<char>> = list.iter().map(|x| vec![*x,*x]).collect();
-    let result = result.iter().fold(vec![],|sum : Vec<char>, x: &Vec<char>| {
+    let result: Vec<char> = list.iter().map(|x| vec![*x,*x]).fold(vec![],|sum : Vec<char>, x: Vec<char>| {
         let mut sum = sum.clone();
         let x = &mut x.clone();
         sum.append(x);
