@@ -26,15 +26,17 @@ pub fn duplicate(list: &[char]) -> Vec<char> {
 }
 
 pub fn duplicate2(list: &[char]) -> Vec<char> {
-    let result: Vec<char> = list.iter().map(|x| vec![*x,*x]).fold(vec![],|sum : Vec<char>, x: Vec<char>| {
-        let mut sum = sum.clone();
-        let x = &mut x.clone();
-        sum.append(x);
-        sum
-    });
+    let result: Vec<char> = list.iter()
+                                .map(|x| vec![*x, *x])
+                                .fold(vec![], |sum: Vec<char>, x: Vec<char>| {
+                                    let mut sum = sum.clone();
+                                    let x = &mut x.clone();
+                                    sum.append(x);
+                                    sum
+                                });
     result
 }
 
 pub fn duplicate3(list: &[char]) -> Vec<char> {
-    list.iter().flat_map(|x| vec![*x,*x]).collect::<Vec<char>>()
+    list.iter().flat_map(|x| vec![*x, *x]).collect::<Vec<char>>()
 }
