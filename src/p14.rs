@@ -4,6 +4,12 @@
 ///use p99::p14::duplicate;
 ///assert_eq!(duplicate(&['a','b','c']),vec!['a','a','b','b','c','c'])
 ///```
+///# Example
+///```
+///use p99::p14::duplicate2;
+///assert_eq!(duplicate2(&['a','b','c']),vec!['a','a','b','b','c','c'])
+///```
+
 
 pub fn duplicate(list: &[char]) -> Vec<char> {
     let mut result: Vec<char> = vec![];
@@ -11,5 +17,16 @@ pub fn duplicate(list: &[char]) -> Vec<char> {
         result.push(*i);
         result.push(*i);
     }
+    result
+}
+
+pub fn duplicate2(list: &[char]) -> Vec<char> {
+    let result: Vec<Vec<char>> = list.iter().map(|x| vec![*x,*x]).collect();
+    let result = result.iter().fold(vec![],|sum : Vec<char>, x: &Vec<char>| {
+        let mut sum = sum.clone();
+        let x = &mut x.clone();
+        sum.append(x);
+        sum
+    });
     result
 }
