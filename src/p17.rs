@@ -15,7 +15,7 @@ pub fn split<T: Copy>(list: &[T], i: usize) -> (Vec<T>, Vec<T>) {
     let mut vec1: Vec<T> = vec![];
     let mut vec2: Vec<T> = vec![];
     for j in 0..list.len() {
-        if j <= i {
+        if j < i {
             vec1.push(list[j]);
         } else {
             vec2.push(list[j]);
