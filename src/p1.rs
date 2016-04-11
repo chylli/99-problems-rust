@@ -10,7 +10,6 @@
 // TODO should rewrite about line to assert_eq!(&[]:&[char])
 // after issue 23416 implemented
 
-use std::clone::Clone;
 pub fn my_last<T>(list: &[T]) -> Option<[T; 1]> where T: PartialEq + Clone {
     if list.len() > 0 {
         Some([list[list.len() - 1].clone()])
