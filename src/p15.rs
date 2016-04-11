@@ -5,7 +5,7 @@
 ///assert_eq!(repli(&['a','b','c'],3),vec!['a','a','a','b','b','b','c','c','c']);
 ///```
 
-pub fn repli(list: &[char], time: i32) -> Vec<char> {
+pub fn repli<T: Copy>(list: &[T], time: i32) -> Vec<T> {
     list.iter()
         .flat_map(|x| {
             let mut a = vec![];
@@ -14,5 +14,5 @@ pub fn repli(list: &[char], time: i32) -> Vec<char> {
             }
             a
         })
-        .collect::<Vec<char>>()
+        .collect::<Vec<T>>()
 }

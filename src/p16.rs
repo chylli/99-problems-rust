@@ -6,8 +6,8 @@
 ///vec!['a','b','d','e','g','h','j']);
 ///```
 
-pub fn drop(list: &[char], i: usize) -> Vec<char> {
-    let mut result: Vec<char> = list.iter().map(|x| *x).collect::<Vec<char>>();
+pub fn drop<T: Copy>(list: &[T], i: usize) -> Vec<T> {
+    let mut result: Vec<T> = list.iter().map(|x| *x).collect::<Vec<T>>();
     for j in 0..list.len() {
         let k = list.len() - j;
         if k % i == 2 {

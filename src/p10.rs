@@ -6,8 +6,8 @@
 ///assert_eq!(encode(&['a','a','a','b','c','c']),vec![(3,'a'),(1,'b'),(2,'c')]);
 ///```
 
-pub fn encode(list: &[char]) -> Vec<(i32, char)> {
-    let mut result: Vec<(i32, char)> = vec![];
+pub fn encode<T: PartialEq + Copy>(list: &[T]) -> Vec<(usize, T)> {
+    let mut result: Vec<(usize, T)> = vec![];
     if list.len() == 0 {
         return result;
     }

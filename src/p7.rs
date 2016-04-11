@@ -17,13 +17,13 @@
 ///```
 
 use self::Tree::*;
-pub enum Tree {
-    One(char),
-    Many(Vec<Tree>),
+pub enum Tree<T: Copy> {
+    One(T),
+    Many(Vec<Tree<T>>),
 }
 
-pub fn flatten(tree: &Tree) -> Vec<char> {
-    let mut result = vec![];
+pub fn flatten<T: Copy>(tree: &Tree<T>) -> Vec<T> {
+    let mut result: Vec<T> = vec![];
     match *tree {
         One(c) => result.push(c),
         Many(ref v) => {

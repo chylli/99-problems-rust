@@ -8,7 +8,7 @@
 ///assert_eq!(last_two(list),None);
 ///```
 
-pub fn last_two<T: PartialEq + Copy>(list: &[T]) -> Option<[T; 2]> {
+pub fn last_two<T: Copy>(list: &[T]) -> Option<[T; 2]> {
     if list.len() > 1 {
         Some([list[list.len() - 2], list[list.len() - 1]])
     } else {

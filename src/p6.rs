@@ -8,7 +8,7 @@
 ///assert!(!is_palindrome(&['a','b','c']));
 ///```
 
-pub fn is_palindrome(list: &[char]) -> bool {
+pub fn is_palindrome<T: PartialEq + Copy>(list: &[T]) -> bool {
     let mut new_list1 = list.to_vec();
     let new_list2 = list.to_vec();
     new_list1.reverse();

@@ -8,6 +8,7 @@
 ///```
 // TODO: it should be written with the feature #![feature(slice_patterns)],
 // but stable version doesn't support this feature.
-pub fn length(list: &[char]) -> usize {
+
+pub fn length<T>(list: &[T]) -> usize {
     list.len()
 }

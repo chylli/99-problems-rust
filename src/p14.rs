@@ -16,8 +16,8 @@
 ///```
 
 
-pub fn duplicate(list: &[char]) -> Vec<char> {
-    let mut result: Vec<char> = vec![];
+pub fn duplicate<T: Copy>(list: &[T]) -> Vec<T> {
+    let mut result: Vec<T> = vec![];
     for i in list {
         result.push(*i);
         result.push(*i);
@@ -25,18 +25,18 @@ pub fn duplicate(list: &[char]) -> Vec<char> {
     result
 }
 
-pub fn duplicate2(list: &[char]) -> Vec<char> {
-    let result: Vec<char> = list.iter()
-                                .map(|x| vec![*x, *x])
-                                .fold(vec![], |sum: Vec<char>, x: Vec<char>| {
-                                    let mut sum = sum.clone();
-                                    let x = &mut x.clone();
-                                    sum.append(x);
-                                    sum
-                                });
+pub fn duplicate2<T: Copy>(list: &[T]) -> Vec<T> {
+    let result: Vec<T> = list.iter()
+                             .map(|x| vec![*x, *x])
+                             .fold(vec![], |sum: Vec<T>, x: Vec<T>| {
+                                 let mut sum = sum.clone();
+                                 let x = &mut x.clone();
+                                 sum.append(x);
+                                 sum
+                             });
     result
 }
 
-pub fn duplicate3(list: &[char]) -> Vec<char> {
-    list.iter().flat_map(|x| vec![*x, *x]).collect::<Vec<char>>()
+pub fn duplicate3<T: Copy>(list: &[T]) -> Vec<T> {
+    list.iter().flat_map(|x| vec![*x, *x]).collect::<Vec<T>>()
 }

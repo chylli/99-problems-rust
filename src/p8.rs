@@ -7,7 +7,7 @@
 //!
 //! ```
 
-pub fn compress(list: &[char]) -> Vec<char> {
+pub fn compress<T: PartialEq + Copy>(list: &[T]) -> Vec<T> {
     let mut result = vec![];
     result.push(list[0]);
     let mut last = list[0];

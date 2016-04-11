@@ -6,7 +6,7 @@
 ///vec!['a', 'a'], vec!['d', 'd'], vec!['e', 'e', 'e', 'e']])
 ///```
 
-pub fn pack(list: &[char]) -> Vec<Vec<char>> {
+pub fn pack<T: PartialEq + Copy>(list: &[T]) -> Vec<Vec<T>> {
     let list = list.to_vec();
     let mut result = vec![];
     let mut last = list[0];

@@ -6,13 +6,12 @@
 ///assert_eq!(rev(&mut['a','b','c']),['c','b','a'])
 ///```
 
-pub fn rev(list: &mut [char]) -> Vec<char> {
+pub fn rev<T: Copy>(list: &mut [T]) -> Vec<T> {
     let len = list.len();
     let index = len - 1;
-    let mut v = vec!['d';len];
+    let mut v: Vec<T> = Vec::with_capacity(len);
     for i in 0..len {
-        println!("{}", i);
-        v[index - i] = list[i];
+        v.push(list[index - i]);
     }
     v
 }

@@ -12,8 +12,8 @@
 use super::p11::Node;
 use super::p11::Node::*;
 
-pub fn decode(list: &Vec<Node>) -> Vec<char> {
-    let mut result: Vec<char> = vec![];
+pub fn decode<T: PartialEq + Copy>(list: &Vec<Node<T>>) -> Vec<T> {
+    let mut result: Vec<T> = vec![];
     for node in list {
         match *node {
             One(c) => result.push(c),

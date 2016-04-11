@@ -10,13 +10,13 @@
 
 use self::Node::*;
 #[derive(PartialEq,Debug)]
-pub enum Node {
-    One(char),
-    Many(i32, char),
+pub enum Node<T: PartialEq + Copy> {
+    One(T),
+    Many(usize, T),
 }
 
-pub fn encode(list: &[char]) -> Vec<Node> {
-    let mut result: Vec<Node> = vec![];
+pub fn encode<T: PartialEq + Copy>(list: &[T]) -> Vec<Node<T>> {
+    let mut result: Vec<Node<T>> = vec![];
     if list.len() == 0 {
         return result;
     }
@@ -35,7 +35,7 @@ pub fn encode(list: &[char]) -> Vec<Node> {
     result
 }
 
-fn create_node(count: i32, last: char) -> Node {
+fn create_node<T: PartialEq + Copy>(count: usize, last: T) -> Node<T> {
     if count == 1 {
         One(last)
     } else {
