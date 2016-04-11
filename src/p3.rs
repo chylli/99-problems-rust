@@ -6,9 +6,9 @@
 ///assert_eq!(at(3, &['a','b',]), None)
 ///```
 
-pub fn at<T: PartialEq + Clone>(k: usize, list: &[T]) -> Option<T> {
+pub fn at<T: PartialEq + Copy>(k: usize, list: &[T]) -> Option<T> {
     if list.len() >= k {
-        Some(list[k - 1].clone())
+        Some(list[k - 1])
     } else {
         None
     }

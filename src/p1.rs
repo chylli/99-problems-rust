@@ -10,9 +10,9 @@
 // TODO should rewrite about line to assert_eq!(&[]:&[char])
 // after issue 23416 implemented
 
-pub fn my_last<T>(list: &[T]) -> Option<[T; 1]> where T: PartialEq + Clone {
+pub fn my_last<T>(list: &[T]) -> Option<[T; 1]> where T: PartialEq + Copy {
     if list.len() > 0 {
-        Some([list[list.len() - 1].clone()])
+        Some([list[list.len() - 1]])
     } else {
         None
     }
