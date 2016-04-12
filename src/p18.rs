@@ -8,17 +8,17 @@
 ///```
 ///use p99::p18::Slice;
 ///let a: Vec<usize> = (0..100).collect();
-///assert_eq!(a.slice(10,20),(10..30).collect::<Vec<usize>>());
+///assert_eq!(a.slice(10,20),(10..21).collect::<Vec<usize>>());
 ///```
 
 pub trait Slice<T: Copy>{
-    fn slice(&self, start: usize, length: usize) -> Vec<T>;
+    fn slice(&self, start: usize, end: usize) -> Vec<T>;
 }
 
 impl <T: Copy> Slice<T> for Vec<T>{
-    fn slice(&self, start: usize, length: usize) -> Vec<T>{
-        let mut result = Vec::with_capacity(length);
-        for i in &self[start..start+length] {
+    fn slice(&self, start: usize, end: usize) -> Vec<T>{
+        let mut result = Vec::with_capacity(end - start + 1);
+        for i in &self[start..(end+1)] {
             result.push(*i);
         }
         result
