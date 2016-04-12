@@ -15,8 +15,12 @@ The goal is to come up with concise and elegant solutions exhibiting Rust's
 features.  Please feel free to improve any of them if you see more idiomatic
 ways of doing the same thing.
 
+DONE
+----
+  * Problems 1-19
+
 TODO
 ----
 
-  * Problems 10-99
+  * Problems 20-99
 
